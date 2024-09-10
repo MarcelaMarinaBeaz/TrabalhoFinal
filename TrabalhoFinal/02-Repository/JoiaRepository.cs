@@ -91,7 +91,7 @@ public class JoiaRepository
                             Joias im = new Joias();
                             im.ID = int.Parse(reader["ID"].ToString());
                             im.Nome = reader["Nome"].ToString();
-                            im.Tipo = int.Parse(reader["Tipo"].ToString());
+                            im.Tipo = string.(reader["Tipo"].ToString());
                             im.Add(i);
                         }
                     }
