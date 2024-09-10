@@ -37,7 +37,13 @@ namespace TrabalhoFinal._02_Repository.Data
                  PessoaId INTEGER NOT NULL,
                  AtividadeId INTEGER NOT NULL
                 );";
-
+                commandoSQL += @"   
+                 CREATE TABLE IF NOT EXISTS Cliente(
+                 Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                 Nome TEXT NOT NULL,
+                 Email TEXT NOT NULL,
+                 Genero TEXT NOT NULL
+                );";
                 using (var command = new SQLiteCommand(commandoSQL, connection))
                 {
                     command.ExecuteNonQuery();
