@@ -8,55 +8,43 @@ using TrabalhoFinal._03_Entidades;
 
 namespace TrabalhoFinal._02_Repository;
 
-public class JoiaRepository
+internal class ClienteRepository
 {
-
     private readonly string ConnectionString;
-    public JoiaRepository(string s)
+    public ClienteRepository(string s)
     {
         ConnectionString = s;
     }
 
-    public JoiaRepository()
-    {
-    }
-
-    public void Adicionar(Joias l)
+    public void Adicionar(Cliente c)
     {
         using var connnection = new SQLiteConnection(ConnectionString);
-        connnection.Insert<Joias>(l);
+        connnection.Insert<Cliente>(c);
     }
 
     public void Remover(int id)
     {
         using var connection = new SQLiteConnection(ConnectionString);
-        Joias novoLivro = BuscarId(id);
-        connection.Delete<Joias>(novoLivro);
+        Cliente novoCliente = BuscarPorId(id);
+        connection.Delete<Cliente>(novoCliente);
     }
 
-    public List<Joias> Listar()
+    public List<Cliente> Listar()
     {
         using var connection = new SQLiteConnection(ConnectionString);
-        return connection.GetAll<Joias>().ToList();
+        return connection.GetAll<Cliente>().ToList();
     }
 
-    public void Editar(int id, Joias l)
+    public void Editar(Cliente c)
     {
         using var connection = new SQLiteConnection(ConnectionString);
-        connection.Update<Joias>(l);
+        connection.Update<Cliente>(c);
     }
 
-    public Joias BuscarId(int id)
+    public Cliente BuscarPorId(int id)
     {
         using var connection = new SQLiteConnection(ConnectionString);
-        return connection.Get<Joias>(id);
-    }
-
-
-
-    internal List<Joias> Listarr()
-    {
-        throw new NotImplementedException();
+        return connection.Get<Cliente>(id);
     }
 }
 
