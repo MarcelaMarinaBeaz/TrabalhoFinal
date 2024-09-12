@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TrabalhoFinal._03_Entidades.DTOs
+namespace TrabalhoFinal._03_Entidades.DTOs;
+
+public class CreateClienteDTO
 {
-    public class CreateClienteDTO
-    {
-        public int id { get; set; }
-        public string Nome { get; set; }
-        public string Email { get; set; }
-        public string Genero { get; set; }
-    }
+    public int id { get; set; }
+    public string Nome { get; set; }
+    public string Email { get; set; }
+    public string Genero { get; set; }
 }
