@@ -13,5 +13,5 @@ namespace TrabalhoFinal._03_Entidades
         public string Email { get; set; }
         public string Genero { get; set; }
     }
-    }
 }
+

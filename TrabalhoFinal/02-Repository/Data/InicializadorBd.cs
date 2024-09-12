@@ -44,7 +44,13 @@ namespace TrabalhoFinal._02_Repository.Data
                  Email TEXT NOT NULL,
                  Genero TEXT NOT NULL
                 );";
-
+                commandoSQL += @"   
+                 CREATE TABLE IF NOT EXISTS Cadastro(
+                 CadastroId INTEGER PRIMARY KEY AUTOINCREMENT,
+                 CadastroNome TEXT NOT NULL,
+                 CadastroEmail TEXT NOT NULL,
+                 CadastroSenha TEXT NOT NULL
+                );";
                 using (var command = new SQLiteCommand(commandoSQL, connection))
                 {
                     command.ExecuteNonQuery();

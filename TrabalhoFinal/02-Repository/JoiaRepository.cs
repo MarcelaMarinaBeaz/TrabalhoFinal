@@ -74,7 +74,7 @@ public class JoiaRepository
             }
         }
     }
-    public Joias Listarr(int id)
+    public List<Joias> Listarr(int id)
     {
         {
             List<Joias> i = new List<Joias>();
@@ -91,13 +91,18 @@ public class JoiaRepository
                             Joias im = new Joias();
                             im.ID = int.Parse(reader["ID"].ToString());
                             im.Nome = reader["Nome"].ToString();
-                            im.Tipo = string.(reader["Tipo"].ToString());
-                            im.Add(i);
+                            im.Tipo = (reader["Tipo"].ToString());
+                            i.Add(im);
                         }
                     }
                 }
             }
             return i;
         }
+    }
+
+    internal List<Joias> Listarr()
+    {
+        throw new NotImplementedException();
     }
 }
