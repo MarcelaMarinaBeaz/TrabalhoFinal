@@ -22,21 +22,6 @@ namespace TrabalhoFinal._02_Repository.Data
                  Nome TEXT NOT NULL,
                  DataNascimento TEXT NOT NULL
                 );";
-
-                commandoSQL += @"   
-                 CREATE TABLE IF NOT EXISTS Atividades(
-                 Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                 Nome TEXT NOT NULL,
-                 Prioridade INTEGER NOT NULL
-                );";
-
-                commandoSQL += @"   
-                 CREATE TABLE IF NOT EXISTS Rotinas(
-                 Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                 DiaId INTEGER NOT NULL,
-                 PessoaId INTEGER NOT NULL,
-                 AtividadeId INTEGER NOT NULL
-                );";
                 commandoSQL += @"   
                  CREATE TABLE IF NOT EXISTS Cliente(
                  Id INTEGER PRIMARY KEY AUTOINCREMENT,
