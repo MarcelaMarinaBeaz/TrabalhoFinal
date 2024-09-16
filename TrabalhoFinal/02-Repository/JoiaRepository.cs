@@ -39,6 +39,11 @@ public class JoiaRepository
         using var connection = new SQLiteConnection(ConnectionString);
         return connection.GetAll<Joias>().ToList();
     }
+    public List<Joias> BuscarPorId(int id)
+    {
+        using var connection = new SQLiteConnection(ConnectionString);
+        return connection.Get<Joias>(id);
+    }
 
     public void Editar(int id, Joias j)
     {

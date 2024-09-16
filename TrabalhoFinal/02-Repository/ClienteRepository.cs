@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dapper.Contrib.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Linq;
@@ -19,7 +20,7 @@ internal class ClienteRepository
     public void Adicionar(Cliente c)
     {
         using var connnection = new SQLiteConnection(ConnectionString);
-        connnection.Insert<Cliente>(c);
+        object value = connnection.Insert<Cliente>(c);
     }
 
     public void Remover(int id)
@@ -33,6 +34,11 @@ internal class ClienteRepository
     {
         using var connection = new SQLiteConnection(ConnectionString);
         return connection.GetAll<Cliente>().ToList();
+    }
+    public List<Joias> BuscarPorId(int id)
+    {
+        using var connection = new SQLiteConnection(ConnectionString);
+        return connection.Get<Joias>(id);
     }
 
     public void Editar(Cliente c)
