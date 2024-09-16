@@ -12,7 +12,7 @@ public class JoiaService
 {
     public JoiaRepository repository { get; set; }
 
-    public JoiaService()
+    public JoiaService(string _config)
     {
         repository = new JoiaRepository();
     }

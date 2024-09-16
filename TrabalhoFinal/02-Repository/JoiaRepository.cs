@@ -30,8 +30,8 @@ public class JoiaRepository
     public void Remover(int id)
     {
         using var connection = new SQLiteConnection(ConnectionString);
-        Joias novoLivro = BuscarId(id);
-        connection.Delete<Joias>(novoLivro);
+        Joias novaJoias = BuscarId(id);
+        connection.Delete<Joias>(novaJoias);
     }
 
     public List<Joias> Listar()
@@ -40,10 +40,10 @@ public class JoiaRepository
         return connection.GetAll<Joias>().ToList();
     }
 
-    public void Editar(int id, Joias l)
+    public void Editar(int id, Joias j)
     {
         using var connection = new SQLiteConnection(ConnectionString);
-        connection.Update<Joias>(l);
+        connection.Update<Joias(j);
     }
 
     public Joias BuscarId(int id)

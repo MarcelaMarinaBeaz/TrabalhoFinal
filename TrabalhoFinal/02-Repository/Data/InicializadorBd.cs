@@ -9,7 +9,7 @@ namespace TrabalhoFinal._02_Repository.Data
 {
     public static class InicializadorBd
     {
-        private const string ConnectionString = "Data Source=Rotina.db";
+        private const string ConnectionString = "Data Source=Joia.db";
 
         public static void Inicializar()
         {
@@ -35,6 +35,13 @@ namespace TrabalhoFinal._02_Repository.Data
                  CadastroNome TEXT NOT NULL,
                  CadastroEmail TEXT NOT NULL,
                  CadastroSenha TEXT NOT NULL
+                );";
+                commandoSQL += @"   
+                 CREATE TABLE IF NOT EXISTS Carrinho(
+                 Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                 Preco TEXT NOT NULL,
+                 Quantidade TEXT NOT NULL,
+                 Estoque TEXT NOT NULL
                 );";
                 using (var command = new SQLiteCommand(commandoSQL, connection))
                 {
