@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dapper.Contrib.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Linq;
@@ -39,7 +40,7 @@ public class JoiaRepository
         using var connection = new SQLiteConnection(ConnectionString);
         return connection.GetAll<Joias>().ToList();
     }
-    public List<Joias> BuscarPorId(int id)
+    public List<Joias> BuscarPorId(int id, System.Data.IDbConnection connection)
     {
         using var connection = new SQLiteConnection(ConnectionString);
         return connection.Get<Joias>(id);
@@ -48,7 +49,7 @@ public class JoiaRepository
     public void Editar(int id, Joias j)
     {
         using var connection = new SQLiteConnection(ConnectionString);
-        connection.Update<Joias(j);
+        connection.Update<Joias>(j);
     }
 
     public Joias BuscarId(int id)
