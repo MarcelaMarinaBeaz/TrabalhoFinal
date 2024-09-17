@@ -35,22 +35,16 @@ internal class ClienteRepository
         using var connection = new SQLiteConnection(ConnectionString);
         return connection.GetAll<Cliente>().ToList();
     }
-    public List<Joias> BuscarPorId(int id)
+    public Cliente BuscarPorId(int id)
     {
         using var connection = new SQLiteConnection(ConnectionString);
-        return connection.Get<Joias>(id);
+        return connection.Get<Cliente>(id);
     }
 
     public void Editar(Cliente c)
     {
         using var connection = new SQLiteConnection(ConnectionString);
         connection.Update<Cliente>(c);
-    }
-
-    public Cliente BuscarPorId(int id)
-    {
-        using var connection = new SQLiteConnection(ConnectionString);
-        return connection.Get<Cliente>(id);
     }
 }
 

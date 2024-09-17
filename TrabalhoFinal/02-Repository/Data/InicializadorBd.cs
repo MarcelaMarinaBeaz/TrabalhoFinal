@@ -37,6 +37,15 @@ namespace TrabalhoFinal._02_Repository.Data
                  CadastroSenha TEXT NOT NULL
                 );";
                 commandoSQL += @"   
+                 CREATE TABLE IF NOT EXISTS Joias(
+                 ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                 Nome TEXT NOT NULL,
+                 Tipo TEXT NOT NULL,
+                 Preco REAL NOT NULL,
+                 Quantidade INTEGER NOT NULL,
+                 Estoque INTEGER NOT NULL
+                );";
+                commandoSQL += @"   
                  CREATE TABLE IF NOT EXISTS Carrinho(
                  Id INTEGER PRIMARY KEY AUTOINCREMENT,
                  Preco TEXT NOT NULL,
