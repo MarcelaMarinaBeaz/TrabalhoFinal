@@ -41,7 +41,7 @@ internal class ClienteRepository
         return connection.Get<Cliente>(id);
     }
 
-    public void Editar(Cliente c)
+    public void Editar(int id, Cliente c)
     {
         using var connection = new SQLiteConnection(ConnectionString);
         connection.Update<Cliente>(c);
