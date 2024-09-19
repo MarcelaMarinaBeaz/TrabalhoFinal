@@ -25,7 +25,7 @@ public class ClienteService
     public void Remover(int id)
     {
         Cliente i = BuscarIId(id);
-        repository.Remover(i.ID);
+        repository.Remover(i.id);
     }
     public Cliente BuscarIId(int id)
     {
@@ -37,6 +37,6 @@ public class ClienteService
     }
     public List<Cliente> Listar()
     {
-        return repository.Listarr();
+        return repository.Listar();
     }
 }
