@@ -40,11 +40,11 @@ public class JoiaRepository
         using var connection = new SQLiteConnection(ConnectionString);
         return connection.GetAll<Joias>().ToList();
     }
-    //public List<Joias> BuscarPorId(int id, System.Data.IDbConnection connection)
-   // {
-   //     using var connection = new SQLiteConnection(ConnectionString);
-    //    return connection.Get<Joias>(id);
-   // }
+    public Joias BuscarPorId(int id)
+    {
+        using var connection = new SQLiteConnection(ConnectionString);
+        return connection.Get<Joias>(id);
+    }
 
     public void Editar(int id, Joias j)
     {
@@ -58,11 +58,10 @@ public class JoiaRepository
         return connection.Get<Joias>(id);
     }
 
-
-
     internal List<Joias> Listarr()
     {
-        throw new NotImplementedException();
+        using var connection = new SQLiteConnection(ConnectionString);
+        return connection.GetAll<Joias>().ToList();
     }
 }
 

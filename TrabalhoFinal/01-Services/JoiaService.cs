@@ -14,7 +14,7 @@ public class JoiaService
 
     public JoiaService(string _config)
     {
-        repository = new JoiaRepository();
+        repository = new JoiaRepository(_config);
     }
 
     public void Adicionar(Joias i)
@@ -24,7 +24,7 @@ public class JoiaService
     public void Remover(int id)
     {
         Joias i = BuscarIId(id);
-        repository.Remover(i);
+        repository.Remover(i.ID);
     }
     public Joias BuscarIId(int id)
     {
