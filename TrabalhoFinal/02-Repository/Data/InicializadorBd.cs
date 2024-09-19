@@ -51,15 +51,7 @@ namespace TrabalhoFinal._02_Repository.Data
                  Preco TEXT NOT NULL,
                  Quantidade TEXT NOT NULL,
                  Estoque TEXT NOT NULL
-                );";
-                commandoSQL += @"   
-                 CREATE TABLE IF NOT EXISTS Joias(
-                 Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                 Preco TEXT NOT NULL,
-                 Quantidade TEXT NOT NULL,
-                 Estoque TEXT NOT NULL
-                );";
-
+                );";           
                 using (var command = new SQLiteCommand(commandoSQL, connection))
                 {
                     command.ExecuteNonQuery();
