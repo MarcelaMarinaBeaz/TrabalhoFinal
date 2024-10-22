@@ -9,7 +9,7 @@ using TrabalhoFinal._03_Entidades;
 
 namespace TrabalhoFinal._02_Repository;
 
-internal class ClienteRepository
+public class ClienteRepository
 {
     private readonly string ConnectionString;
     public ClienteRepository(string s)
@@ -46,5 +46,7 @@ internal class ClienteRepository
         using var connection = new SQLiteConnection(ConnectionString);
         connection.Update<Cliente>(c);
     }
+
+    
 }
 

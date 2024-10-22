@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TrabalhoFinal._02_Repository;
 using TrabalhoFinal._03_Entidades;
+using TrabalhoFinal._03_Entidades.DTOs;
 
 namespace TrabalhoFinal._01_Services;
 
@@ -38,5 +40,18 @@ public class ClienteService
     public List<Cliente> Listar()
     {
         return repository.Listar();
+    }
+    public Cliente FazerLogin(CreateClienteDTO usuario)
+    {
+       List<Cliente> listacliente= Listar();
+        foreach(Cliente cliente in listacliente)
+        {
+            if(cliente.Nome == usuario.Nome)
+            {
+                return cliente;
+            }
+        }
+        return null;
+
     }
 }

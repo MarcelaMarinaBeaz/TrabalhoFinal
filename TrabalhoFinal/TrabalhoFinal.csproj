@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <Folder Include="03-Entidades\DTOs\Atividade\" />
+    <Folder Include="03-Entidades\DTOs\Pessoa\" />
   </ItemGroup>
 
 </Project>

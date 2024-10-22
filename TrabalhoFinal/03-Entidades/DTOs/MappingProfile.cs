@@ -12,7 +12,7 @@ namespace TrabalhoFinal._03_Entidades.DTOs
     {
         public MappingProfile()
         {
-            CreateMap<CreatePessoaDTO, Pessoa>().ReverseMap();
+            CreateMap<CreateClienteDTO, Cliente>().ReverseMap();
             CreateMap<CreateJoiaDTO, Joias>().ReverseMap();
         }
     }
