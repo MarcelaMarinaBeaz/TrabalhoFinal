@@ -23,14 +23,14 @@ namespace TrabalhoFinal._02_Repository.Data
                  DataNascimento TEXT NOT NULL
                 );";
                 commandoSQL += @"   
-                 CREATE TABLE IF NOT EXISTS Cliente(
+                 CREATE TABLE IF NOT EXISTS Clientes(
                  Id INTEGER PRIMARY KEY AUTOINCREMENT,
                  Nome TEXT NOT NULL,
                  Email TEXT NOT NULL,
-                 Genero TEXT NOT NULL
+                 DataNascimento TEXT NOT NULL
                 );";
                 commandoSQL += @"   
-                 CREATE TABLE IF NOT EXISTS Cadastro(
+                 CREATE TABLE IF NOT EXISTS Cadastros(
                  CadastroId INTEGER PRIMARY KEY AUTOINCREMENT,
                  CadastroNome TEXT NOT NULL,
                  CadastroEmail TEXT NOT NULL,
@@ -46,7 +46,7 @@ namespace TrabalhoFinal._02_Repository.Data
                  Estoque INTEGER NOT NULL
                 );";
                 commandoSQL += @"   
-                 CREATE TABLE IF NOT EXISTS Carrinho(
+                 CREATE TABLE IF NOT EXISTS Carrinhos(
                  Id INTEGER PRIMARY KEY AUTOINCREMENT,
                  Preco TEXT NOT NULL,
                  Quantidade TEXT NOT NULL,

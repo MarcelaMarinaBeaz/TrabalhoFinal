@@ -11,7 +11,6 @@ public class Cliente
     public int id { get; set; }
     public string Nome { get; set; }
     public string Email { get; set; }
-    public Joias Genero { get; set; }
     public string DataNascimento { get; set; }
 }
 
