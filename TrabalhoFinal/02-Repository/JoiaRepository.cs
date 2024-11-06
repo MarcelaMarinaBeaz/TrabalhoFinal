@@ -17,11 +17,6 @@ public class JoiaRepository
     {
         ConnectionString = s;
     }
-
-    public JoiaRepository()
-    {
-    }
-
     public void Adicionar(Joias l)
     {
         using var connnection = new SQLiteConnection(ConnectionString);

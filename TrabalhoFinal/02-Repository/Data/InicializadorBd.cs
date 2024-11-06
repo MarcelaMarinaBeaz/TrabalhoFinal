@@ -17,12 +17,6 @@ namespace TrabalhoFinal._02_Repository.Data
             {
                 connection.Open();
                 string commandoSQL = @"   
-                 CREATE TABLE IF NOT EXISTS Pessoas(
-                 Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                 Nome TEXT NOT NULL,
-                 DataNascimento TEXT NOT NULL
-                );";
-                commandoSQL += @"   
                  CREATE TABLE IF NOT EXISTS Clientes(
                  Id INTEGER PRIMARY KEY AUTOINCREMENT,
                  Nome TEXT NOT NULL,
@@ -47,10 +41,9 @@ namespace TrabalhoFinal._02_Repository.Data
                 );";
                 commandoSQL += @"   
                  CREATE TABLE IF NOT EXISTS Carrinhos(
-                 Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                 Preco TEXT NOT NULL,
-                 Quantidade TEXT NOT NULL,
-                 Estoque TEXT NOT NULL
+                 ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                 PessoaID TEXT NOT NULL,
+                 JoiaID TEXT NOT NULL,
                 );";           
                 using (var command = new SQLiteCommand(commandoSQL, connection))
                 {

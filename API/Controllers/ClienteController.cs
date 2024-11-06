@@ -21,7 +21,7 @@ public class ClienteController : ControllerBase
     [HttpPost("adicionar-cliente")]
     public void AdicionarCliente(CreateClienteDTO cDTO)
     {
-       Cliente cliente = _mapper.Map<Cliente>(cDTO);
+        Cliente cliente = _mapper.Map<Cliente>(cDTO);
         _service.Adicionar(cliente);
     }
     [HttpGet("listar-cliente")]
@@ -39,10 +39,6 @@ public class ClienteController : ControllerBase
     {
         _service.Remover(id);
     }
-    [HttpPost("login-cliente")]
-    public Cliente LoginCliente(CreateClienteDTO cDTO)
-    {
-        Cliente cliente = _service.FazerLogin(cDTO);
-        return cliente;
-    }
 }
+   
+

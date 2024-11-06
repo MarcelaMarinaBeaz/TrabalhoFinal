@@ -41,17 +41,5 @@ public class ClienteService
     {
         return repository.Listar();
     }
-    public Cliente FazerLogin(CreateClienteDTO usuario)
-    {
-       List<Cliente> listacliente= Listar();
-        foreach(Cliente cliente in listacliente)
-        {
-            if(cliente.Nome == usuario.Nome)
-            {
-                return cliente;
-            }
-        }
-        return null;
-
-    }
+   
 }

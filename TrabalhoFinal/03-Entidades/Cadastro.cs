@@ -10,9 +10,9 @@ public class Cadastro
 {
    
     public int CadastroId { get;set; }
-    public Cliente CadNome { get; set; }
-    public Cliente CadEmail { get; set; }
-    public Cliente CadSenha { get; set;} 
+    public string CadNome { get; set; }
+    public string CadEmail { get; set; }
+    public string CadSenha { get; set;} 
 
 
 }

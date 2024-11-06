@@ -11,6 +11,5 @@ public class CreateClienteDTO
     public int id { get; set; }
     public string Nome { get; set; }
     public string Email { get; set; }
-    public string Genero { get; set; }
-    public string DataNascimento { get; set; }
+    public int DataNascimento { get; set; }
 }
