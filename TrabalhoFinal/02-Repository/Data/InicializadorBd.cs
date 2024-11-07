@@ -43,7 +43,7 @@ namespace TrabalhoFinal._02_Repository.Data
                  CREATE TABLE IF NOT EXISTS Carrinhos(
                  ID INTEGER PRIMARY KEY AUTOINCREMENT,
                  PessoaID TEXT NOT NULL,
-                 JoiaID TEXT NOT NULL,
+                 JoiaID TEXT NOT NULL
                 );";           
                 using (var command = new SQLiteCommand(commandoSQL, connection))
                 {
