@@ -17,34 +17,34 @@ public class ClienteRepository
         ConnectionString = s;
     }
 
-    public void Adicionar(Cliente c)
+    public void Adicionar(Carrinho c)
     {
         using var connnection = new SQLiteConnection(ConnectionString);
-        object value = connnection.Insert<Cliente>(c);
+        object value = connnection.Insert<Carrinho>(c);
     }
 
     public void Remover(int id)
     {
         using var connection = new SQLiteConnection(ConnectionString);
-        Cliente novoCliente = BuscarPorId(id);
-        connection.Delete<Cliente>(novoCliente);
+        Carrinho novoCliente = BuscarPorId(id);
+        connection.Delete<Carrinho>(novoCliente);
     }
 
-    public List<Cliente> Listar()
+    public List<Carrinho> Listar()
     {
         using var connection = new SQLiteConnection(ConnectionString);
-        return connection.GetAll<Cliente>().ToList();
+        return connection.GetAll<Carrinho>().ToList();
     }
-    public Cliente BuscarPorId(int id)
+    public Carrinho BuscarPorId(int id)
     {
         using var connection = new SQLiteConnection(ConnectionString);
-        return connection.Get<Cliente>(id);
+        return connection.Get<Carrinho>(id);
     }
 
-    public void Editar(int id, Cliente c)
+    public void Editar(int id, Carrinho c)
     {
         using var connection = new SQLiteConnection(ConnectionString);
-        connection.Update<Cliente>(c);
+        connection.Update<Carrinho>(c);
     }
 
     

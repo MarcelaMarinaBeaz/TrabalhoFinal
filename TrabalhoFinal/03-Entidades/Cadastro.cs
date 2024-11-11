@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrabalhoFinal._03_Entidades;
 
-public class Cadastro
+public class Carrinho
 {
    
     public int CadastroId { get;set; }

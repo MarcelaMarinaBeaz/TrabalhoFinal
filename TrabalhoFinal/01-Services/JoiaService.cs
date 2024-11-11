@@ -8,11 +8,11 @@ using TrabalhoFinal._03_Entidades;
 
 namespace TrabalhoFinal._01_Services;
 
-public class JoiaService
+public class CadastroService
 {
     public JoiaRepository repository { get; set; }
 
-    public JoiaService(string _config)
+    public CadastroService(string _config)
     {
         repository = new JoiaRepository(_config);
     }
