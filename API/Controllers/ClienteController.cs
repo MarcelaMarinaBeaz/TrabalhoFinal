@@ -10,27 +10,27 @@ namespace API.Controllers;
 [Route("[controller]")]
 public class ClienteController : ControllerBase
 {
-    private readonly CarrinhoService _service;
+    private readonly ClienteService _service;
     private readonly IMapper _mapper;
     public ClienteController(IConfiguration config, IMapper mapper)
     {
         string _config = config.GetConnectionString("DefaultConnection");
-        _service = new CarrinhoService(_config);
+        _service = new ClienteService(_config);
         _mapper = mapper;
     }
     [HttpPost("adicionar-cliente")]
     public void AdicionarCliente(CreateClienteDTO cDTO)
     {
-        Carrinho cliente = _mapper.Map<Carrinho>(cDTO);
+        Cadastro cliente = _mapper.Map<Cadastro>(cDTO);
         _service.Adicionar(cliente);
     }
     [HttpGet("listar-cliente")]
-    public List<Carrinho> ListarCliente()
+    public List<Cadastro> ListarCliente()
     {
         return _service.Listar();
     }
     [HttpPut("editar-cliente")]
-    public void EditarCliente(int id, Carrinho c)
+    public void EditarCliente(int id, Cadastro c)
     {
         _service.Editar(id, c);
     }

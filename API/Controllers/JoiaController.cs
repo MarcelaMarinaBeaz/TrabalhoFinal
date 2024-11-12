@@ -12,12 +12,12 @@ namespace API.Controllers;
 [Route("[controller]")]
 public class JoiaController : ControllerBase
 {
-    private readonly CadastroService _service;
+    private readonly JoiaService _service;
     private readonly IMapper _mapper;
     public JoiaController(IConfiguration config, IMapper mapper)
     {
         string _config = config.GetConnectionString("DefaultConnection");
-        _service = new CadastroService(_config);
+        _service = new JoiaService(_config);
         _mapper = mapper;
     }
     [HttpPost("adicionar-Joia")]
@@ -29,7 +29,7 @@ public class JoiaController : ControllerBase
     [HttpGet("listar-joia")]
     public List<Joias> Listar()
     {
-        return _service.Listar();
+         return Listar();
     }
     [HttpPut("editar-joia")]
     public void Editar(int id, Joias j)

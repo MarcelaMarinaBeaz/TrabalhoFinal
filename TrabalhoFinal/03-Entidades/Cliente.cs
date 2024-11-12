@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrabalhoFinal._03_Entidades;
 
-public class Carrinho
+public class Cliente
 {
     public int id { get; set; }
     public string Nome { get; set; }

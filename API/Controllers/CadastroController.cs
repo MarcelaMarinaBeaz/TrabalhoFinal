@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using TrabalhoFinal._01_Services;
 using TrabalhoFinal._03_Entidades.DTOs.Joia;
 using TrabalhoFinal._03_Entidades;
+using TrabalhoFinal._03_Entidades.DTOs;
 
 namespace API.Controllers
 {
@@ -18,23 +19,23 @@ namespace API.Controllers
             _service = new CadastroService(_config);
             _mapper = mapper;
         }
-        [HttpPost("adicionar-Joia")]
-        public void Adicionar(CreateJoiaDTO createJoiaDTO)
+        [HttpPost("adicionar-cadastro")]
+        public void Adicionar(CreateClienteDTO createJoiaDTO)
         {
-            Joias j = _mapper.Map<Cadastro>(createJoiaDTO);
-            _service.Adicionar(j);
+           Cadastro c = _mapper.Map<Cadastro>(createJoiaDTO);
+            _service.Adicionar(c);
         }
-        [HttpGet("listar-joia")]
+        [HttpGet("listar-cadastro")]
         public List<Cadastro> Listar()
         {
             return _service.Listar();
         }
-        [HttpPut("editar-joia")]
-        public void Editar(int id, Joias j)
+        [HttpPut("editar-cadastro")]
+        public void Editar(int id, Cadastro j)
         {
             _service.Editar(id, j);
         }
-        [HttpDelete("deletar-joia")]
+        [HttpDelete("deletar-cadastro")]
         public void Deletar(int id)
         {
             _service.Remover(id);
