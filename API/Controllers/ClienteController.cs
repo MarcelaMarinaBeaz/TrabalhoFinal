@@ -18,22 +18,39 @@ public class ClienteController : ControllerBase
         _service = new ClienteService(_config);
         _mapper = mapper;
     }
+    /// <summary>
+    /// Adiciona um cliente db
+    /// </summary>
+    /// <param name="cDTO"></param>
     [HttpPost("adicionar-cliente")]
     public void AdicionarCliente(CreateClienteDTO cDTO)
     {
         Cadastro cliente = _mapper.Map<Cadastro>(cDTO);
         _service.Adicionar(cliente);
     }
+    /// <summary>
+    /// Lista um cliente db
+    /// </summary>
+    /// <returns></returns>
     [HttpGet("listar-cliente")]
     public List<Cadastro> ListarCliente()
     {
         return _service.Listar();
     }
+    /// <summary>
+    /// Edita um cliente db
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="c"></param>
     [HttpPut("editar-cliente")]
     public void EditarCliente(int id, Cadastro c)
     {
         _service.Editar(id, c);
     }
+    /// <summary>
+    /// Deleta um cliente db
+    /// </summary>
+    /// <param name="id"></param>
     [HttpDelete("deletar-cliente")]
     public void DeletarCliente(int id)
     {

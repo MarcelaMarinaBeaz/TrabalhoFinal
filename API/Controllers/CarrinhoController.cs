@@ -18,22 +18,39 @@ namespace API.Controllers
             _service = new CarrinhoService(_config);
             _mapper = mapper;
         }
+        /// <summary>
+        /// Adiciona algo a um carrinho db
+        /// </summary>
+        /// <param name="cDTO"></param>
         [HttpPost("adicionar-carrinho")]
         public void AdicionarCliente(CreateClienteDTO cDTO)
         {
             Cadastro cliente = _mapper.Map<Cadastro>(cDTO);
             _service.Adicionar(cliente);
         }
+        /// <summary>
+        /// Lista um carrinho db
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("listar-carrinho")]
         public List<Cadastro> ListarCliente()
         {
             return _service.Listar();
         }
+        /// <summary>
+        /// Edita um carrinho db
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="c"></param>
         [HttpPut("editar-carrinho")]
         public void EditarCliente(int id, Cadastro c)
         {
             _service.Editar(id, c);
         }
+        /// <summary>
+        /// Deleta um carrinho db
+        /// </summary>
+        /// <param name="id"></param>
         [HttpDelete("deletar-carrinho")]
         public void DeletarCliente(int id)
         {

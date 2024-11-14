@@ -20,22 +20,39 @@ public class JoiaController : ControllerBase
         _service = new JoiaService(_config);
         _mapper = mapper;
     }
+    /// <summary>
+    /// Adiciona uma joia db
+    /// </summary>
+    /// <param name="createJoiaDTO"></param>
     [HttpPost("adicionar-Joia")]
     public void Adicionar(CreateJoiaDTO createJoiaDTO)
     {
         Joias j = _mapper.Map<Joias>(createJoiaDTO);
         _service.Adicionar(j);
     }
+    /// <summary>
+    /// Lista uma joia db
+    /// </summary>
+    /// <returns></returns>
     [HttpGet("listar-joia")]
     public List<Joias> Listar()
     {
          return Listar();
     }
+    /// <summary>
+    /// Edita uma Joia db
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="j"></param>
     [HttpPut("editar-joia")]
     public void Editar(int id, Joias j)
     {
         _service.Editar(id, j);
     }
+    /// <summary>
+    /// Deleta uma joia db
+    /// </summary>
+    /// <param name="id"></param>
     [HttpDelete("deletar-joia")]
     public void Deletar(int id)
     {
