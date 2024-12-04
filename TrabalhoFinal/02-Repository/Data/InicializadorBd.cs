@@ -20,15 +20,17 @@ namespace TrabalhoFinal._02_Repository.Data
                  CREATE TABLE IF NOT EXISTS Clientes(
                  Id INTEGER PRIMARY KEY AUTOINCREMENT,
                  Nome TEXT NOT NULL,
+                 User TEXT NOT NULL,
+                 Senha TEXT NOT NULL,
                  Email TEXT NOT NULL,
                  DataNascimento TEXT NOT NULL
                 );";
                 commandoSQL += @"   
                  CREATE TABLE IF NOT EXISTS Cadastros(
-                 CadastroId INTEGER PRIMARY KEY AUTOINCREMENT,
-                 CadastroNome TEXT NOT NULL,
-                 CadastroEmail TEXT NOT NULL,
-                 CadastroSenha TEXT NOT NULL
+                 Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                 CadNome TEXT NOT NULL,
+                 CadEmail TEXT NOT NULL,
+                 CadSenha TEXT NOT NULL
                 );";
                 commandoSQL += @"   
                  CREATE TABLE IF NOT EXISTS Joias(

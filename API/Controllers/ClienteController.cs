@@ -23,9 +23,9 @@ public class ClienteController : ControllerBase
     /// </summary>
     /// <param name="cDTO"></param>
     [HttpPost("adicionar-cliente")]
-    public void AdicionarCliente(CreateClienteDTO cDTO)
+    public void AdicionarCliente(Cliente cDTO)
     {
-        Cadastro cliente = _mapper.Map<Cadastro>(cDTO);
+        Cliente cliente = _mapper.Map<Cliente>(cDTO);
         _service.Adicionar(cliente);
     }
     /// <summary>
@@ -33,7 +33,7 @@ public class ClienteController : ControllerBase
     /// </summary>
     /// <returns></returns>
     [HttpGet("listar-cliente")]
-    public List<Cadastro> ListarCliente()
+    public List<Cliente> ListarCliente()
     {
         return _service.Listar();
     }
@@ -43,7 +43,7 @@ public class ClienteController : ControllerBase
     /// <param name="id"></param>
     /// <param name="c"></param>
     [HttpPut("editar-cliente")]
-    public void EditarCliente(int id, Cadastro c)
+    public void EditarCliente(int id, Cliente c)
     {
         _service.Editar(id, c);
     }

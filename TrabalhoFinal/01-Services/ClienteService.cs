@@ -20,26 +20,39 @@ public class ClienteService
         repository = new ClienteRepository(_config);
     }
 
-    public void Adicionar(Cadastro i)
+    public void Adicionar(Cliente i)
     {
         repository.Adicionar(i);
     }
     public void Remover(int id)
     {
-        Cadastro i = BuscarIId(id);
+        Cliente i = BuscarIId(id);
         repository.Remover(id);
     }
-    public Cadastro BuscarIId(int id)
+    public Cliente BuscarIId(int id)
     {
         return repository.BuscarPorId(id);
     }
-    public void Editar(int id, Cadastro i)
+    public void Editar(int id, Cliente i)
     {
         repository.Editar(id, i);
     }
-    public List<Cadastro> Listar()
+    public List<Cliente> Listar()
     {
         return repository.Listar();
+    }
+    public Cliente FazerLogin(CreateLoginDTO user)
+    {
+        List<Cliente> listarcliente = Listar();
+        foreach(Cliente cliente in listarcliente)
+        {
+            if(cliente.User == user.User
+                && cliente.Senha == user.Senha)
+            {
+                return cliente;
+            }
+        }
+        return null;
     }
    
 }

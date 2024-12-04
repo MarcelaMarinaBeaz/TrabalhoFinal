@@ -23,9 +23,9 @@ namespace API.Controllers
         /// </summary>
         /// <param name="cDTO"></param>
         [HttpPost("adicionar-carrinho")]
-        public void AdicionarCliente(CreateClienteDTO cDTO)
+        public void AdicionarCliente(Carrinho cDTO)
         {
-            Cadastro cliente = _mapper.Map<Cadastro>(cDTO);
+            Carrinho cliente = _mapper.Map<Carrinho>(cDTO);
             _service.Adicionar(cliente);
         }
         /// <summary>
@@ -33,7 +33,7 @@ namespace API.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet("listar-carrinho")]
-        public List<Cadastro> ListarCliente()
+        public List<Carrinho> ListarCliente()
         {
             return _service.Listar();
         }
@@ -43,7 +43,7 @@ namespace API.Controllers
         /// <param name="id"></param>
         /// <param name="c"></param>
         [HttpPut("editar-carrinho")]
-        public void EditarCliente(int id, Cadastro c)
+        public void EditarCliente(int id, Carrinho c)
         {
             _service.Editar(id, c);
         }

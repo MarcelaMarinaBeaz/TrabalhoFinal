@@ -17,34 +17,34 @@ public class ClienteRepository
         ConnectionString = s;
     }
 
-    public void Adicionar(Cadastro c)
+    public void Adicionar(Cliente c)
     {
         using var connnection = new SQLiteConnection(ConnectionString);
-        object value = connnection.Insert<Cadastro>(c);
+        object value = connnection.Insert<Cliente>(c);
     }
 
     public void Remover(int id)
     {
         using var connection = new SQLiteConnection(ConnectionString);
-        Cadastro novoCliente = BuscarPorId(id);
-        connection.Delete<Cadastro>(novoCliente);
+        Cliente novoCliente = BuscarPorId(id);
+        connection.Delete<Cliente>(novoCliente);
     }
 
-    public List<Cadastro> Listar()
+    public List<Cliente> Listar()
     {
         using var connection = new SQLiteConnection(ConnectionString);
-        return connection.GetAll<Cadastro>().ToList();
+        return connection.GetAll<Cliente>().ToList();
     }
-    public Cadastro BuscarPorId(int id)
+    public Cliente BuscarPorId(int id)
     {
         using var connection = new SQLiteConnection(ConnectionString);
-        return connection.Get<Cadastro>(id);
+        return connection.Get<Cliente>(id);
     }
 
-    public void Editar(int id, Cadastro c)
+    public void Editar(int id, Cliente c)
     {
         using var connection = new SQLiteConnection(ConnectionString);
-        connection.Update<Cadastro>(c);
+        connection.Update<Cliente>(c);
     }
 
     

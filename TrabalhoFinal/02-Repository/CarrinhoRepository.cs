@@ -17,34 +17,34 @@ namespace TrabalhoFinal._02_Repository
             ConnectionString = s;
         }
 
-        public void Adicionar(Cadastro c)
+        public void Adicionar(Carrinho c)
         {
             using var connnection = new SQLiteConnection(ConnectionString);
-            object value = connnection.Insert<Cadastro>(c);
+            object value = connnection.Insert<Carrinho>(c);
         }
 
         public void Remover(int id)
         {
             using var connection = new SQLiteConnection(ConnectionString);
-            Cadastro novoCliente = BuscarPorId(id);
-            connection.Delete<Cadastro>(novoCliente);
+            Carrinho novoCliente = BuscarPorId(id);
+            connection.Delete<Carrinho>(novoCliente);
         }
 
-        public List<Cadastro> Listar()
+        public List<Carrinho> Listar()
         {
             using var connection = new SQLiteConnection(ConnectionString);
-            return connection.GetAll<Cadastro>().ToList();
+            return connection.GetAll<Carrinho>().ToList();
         }
-        public Cadastro BuscarPorId(int id)
+        public Carrinho BuscarPorId(int id)
         {
             using var connection = new SQLiteConnection(ConnectionString);
-            return connection.Get<Cadastro>(id);
+            return connection.Get<Carrinho>(id);
         }
 
-        public void Editar(int id, Cadastro c)
+        public void Editar(int id, Carrinho c)
         {
             using var connection = new SQLiteConnection(ConnectionString);
-            connection.Update<Cadastro>(c);
+            connection.Update<Carrinho>(c);
         }
 
 

@@ -25,7 +25,7 @@ public class JoiaController : ControllerBase
     /// </summary>
     /// <param name="createJoiaDTO"></param>
     [HttpPost("adicionar-Joia")]
-    public void Adicionar(CreateJoiaDTO createJoiaDTO)
+    public void Adicionar(Joias createJoiaDTO)
     {
         Joias j = _mapper.Map<Joias>(createJoiaDTO);
         _service.Adicionar(j);

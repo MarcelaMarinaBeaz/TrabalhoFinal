@@ -17,24 +17,24 @@ namespace TrabalhoFinal._01_Services
             repository = new CarrinhoRepository(_config);
         }
 
-        public void Adicionar(Cadastro i)
+        public void Adicionar(Carrinho i)
         {
             repository.Adicionar(i);
         }
         public void Remover(int id)
         {
-            Cadastro i = BuscarIId(id);
+            Carrinho i = BuscarIId(id);
             repository.Remover(id);
         }
-        public Cadastro BuscarIId(int id)
+        public Carrinho BuscarIId(int id)
         {
             return repository.BuscarPorId(id);
         }
-        public void Editar(int id, Cadastro i)
+        public void Editar(int id, Carrinho i)
         {
             repository.Editar(id, i);
         }
-        public List<Cadastro> Listar()
+        public List<Carrinho> Listar()
         {
             return repository.Listar();
         }

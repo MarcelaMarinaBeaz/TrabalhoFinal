@@ -24,7 +24,7 @@ namespace API.Controllers
         /// </summary>
         /// <param name="createJoiaDTO"></param>
         [HttpPost("adicionar-cadastro")]
-        public void Adicionar(CreateClienteDTO createJoiaDTO)
+        public void Adicionar(Cadastro createJoiaDTO)
         {
            Cadastro c = _mapper.Map<Cadastro>(createJoiaDTO);
             _service.Adicionar(c);
