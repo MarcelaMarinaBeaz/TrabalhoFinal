@@ -15,4 +15,5 @@ public class Joias
     public double Preco { get; set; }
     public int Quantidade { get; set; }
     public int Estoque { get; set; }
+    public object Valor { get; set; }
 }

@@ -56,6 +56,16 @@ public class ClienteController : ControllerBase
     {
         _service.Remover(id);
     }
+    /// <summary>
+    /// Loga um cliente db
+    /// </summary>
+    /// <param name="cDTO"></param>
+    [HttpPost("logar-cliente")]
+    public void LogarCliente()
+    {
+        _service.FazerLogin();
+    }
+
 }
-   
+
 
