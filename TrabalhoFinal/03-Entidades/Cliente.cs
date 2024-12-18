@@ -9,10 +9,10 @@ namespace TrabalhoFinal._03_Entidades;
 public class Cliente
 {
     public int id { get; set; }
-    public string Nome { get; set; }
-    public string User { get; set; }
-    public string Senha { get; set; }
-    public string Email { get; set; }
-    public string DataNascimento { get; set; }
+    public string? Nome { get; set; }
+    public string? User { get; set; }
+    public string? Senha { get; set; }
+    public string? Email { get; set; }
+    public string? DataNascimento { get; set; }
 }
 

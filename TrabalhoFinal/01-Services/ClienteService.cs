@@ -41,12 +41,12 @@ public class ClienteService
     {
         return repository.Listar();
     }
-    public Cliente FazerLogin(CreateLoginDTO user)
+    public Cliente FazerLogin(ClienteLoginDTO user)
     {
         List<Cliente> listarcliente = Listar();
         foreach(Cliente cliente in listarcliente)
         {
-            if(cliente.User == user.User
+            if(cliente.User == user.user
                 && cliente.Senha == user.Senha)
             {
                 return cliente;

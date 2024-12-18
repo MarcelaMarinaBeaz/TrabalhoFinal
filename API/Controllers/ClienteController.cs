@@ -61,9 +61,18 @@ public class ClienteController : ControllerBase
     /// </summary>
     /// <param name="cDTO"></param>
     [HttpPost("logar-cliente")]
-    public void LogarCliente()
+    public Cliente FazerLogin([FromBody] ClienteLoginDTO clienteLogin)
     {
-        _service.FazerLogin();
+        try
+        {
+            Cliente cliente = _service.FazerLogin(clienteLogin);
+            return cliente;
+        }
+        catch (Exception e)
+        {
+            throw new Exception($"Ocorreu um erro ao Logar Cliente, o erro foi \n{e.Message}");
+        }
+
     }
 
 }

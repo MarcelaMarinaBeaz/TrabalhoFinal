@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TrabalhoFinal._03_Entidades.DTOs
+namespace TrabalhoFinal._03_Entidades.DTOs;
+
+public class ClienteLoginDTO
 {
-    public class ClienteLoginDTO
-    {
-        public string user { get; set; }
-        public string Senha { get; set; }
-    }
+    public string user { get; set; }
+    public string Senha { get; set; }
 }

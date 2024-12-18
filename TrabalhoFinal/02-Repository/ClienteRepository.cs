@@ -46,6 +46,7 @@ public class ClienteRepository
         using var connection = new SQLiteConnection(ConnectionString);
         connection.Update<Cliente>(c);
     }
+    
 
     
 }
